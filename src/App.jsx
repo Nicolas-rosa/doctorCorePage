@@ -33,12 +33,21 @@ export default function App() {
     if (savedTheme === 'dark' || savedTheme === 'light') {
       setTheme(savedTheme);
     }
+
+    const savedLanguage = window.localStorage.getItem('profileLanguage');
+    if (savedLanguage === 'pt' || savedLanguage === 'en') {
+      setLanguage(savedLanguage);
+    }
   }, []);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
     window.localStorage.setItem('profileTheme', theme);
   }, [theme]);
+
+  useEffect(() => {
+    window.localStorage.setItem('profileLanguage', language);
+  }, [language]);
 
   const content = siteContent[language];
   const basePath = content.pathPrefix ? `/${content.pathPrefix}` : '';

@@ -1,26 +1,26 @@
-# 🧩 Design System & Template de Site — Perfil Profissional/Institucional
+# 🏥 Template de Landing Page para Profissionais da Saúde
 
-Um **sistema de componentes reutilizável**, genérico e neutro em relação a tema/nicho, pronto para criar sites institucionais e de prestação de serviço de forma modular e consistente.
-
----
-
-## ✨ Características
-
-- ✅ **Totalmente modular** — Componentes isolados com props editáveis
-- ✅ **Zero conteúdo hardcoded** — Tudo configurável via `siteContent.js`
-- ✅ **Design tokens centralizados** — Cores, tipografia, e espaçamento em `tokens.css`
-- ✅ **Responsivo mobile-first** — Funciona em qualquer dispositivo
-- ✅ **Acessibilidade WCAG AA** — Contraste apropriado, foco visível, alt text obrigatório
-- ✅ **Agnóstico de nicho** — Funciona para qualquer segmento (educação, saúde, consultoria, etc.)
-- ✅ **8+ páginas prontas** — Home, Sobre, Itens, Conteúdo, Post, Contato, FAQ, Privacidade
+Este projeto é um **template de landing page modular** pensado para profissionais da saúde, clínicas, consultórios e serviços de bem-estar. Ele reúne componentes prontos para apresentar serviços, depoimentos, diferenciais e canais de contato com visual moderno e foco em conversão.
 
 ---
 
-## 🚀 Como roddar
+## ✨ O que este template oferece
+
+- ✅ **Landing page pronta** para profissionais da saúde
+- ✅ **Componentes reutilizáveis** que podem ser combinados ou reorganizados
+- ✅ **Conteúdo editável** em `src/data/siteContent.js`
+- ✅ **Design tokens centralizados** em `src/tokens/tokens.css`
+- ✅ **Responsividade mobile-first** para celular, tablet e desktop
+- ✅ **Acessibilidade básica** com foco em texto alternativo e controle de foco
+- ✅ **Seções ideais para saúde**: serviços, sobre, depoimentos, FAQ, contato e CTA
+
+---
+
+## 🚀 Como usar
 
 ### Pré-requisitos
 - Node.js 16+ instalado
-- npm ou pnpm
+- npm (ou pnpm)
 
 ### Instalação
 
@@ -28,23 +28,21 @@ Um **sistema de componentes reutilizável**, genérico e neutro em relação a t
 npm install
 ```
 
-### Desenvolvimento
+### Iniciar em modo de desenvolvimento
 
 ```bash
 npm run dev
 ```
 
-O servidor estará disponível em `http://localhost:5173`
+Abra `http://localhost:5173` no navegador.
 
-### Build para Produção
+### Build para produção
 
 ```bash
 npm run build
 ```
 
-Os arquivos compilados estarão em `dist/`
-
-### Preview do Build
+### Visualizar o build
 
 ```bash
 npm run preview
@@ -52,152 +50,121 @@ npm run preview
 
 ---
 
-## 📁 Estrutura de Pastas
+## 📁 Estrutura do projeto
 
 ```
 src/
-├── App.jsx                    # App principal e roteador
-├── main.jsx                   # Entrada e renderização
-├── pages.jsx                  # Definição de páginas
-├── styles.css                 # Estilos globais
-│
-├── components/                # Componentes reutilizáveis
-│   ├── Header.jsx             # Navegação e breadcrumb
-│   ├── Hero.jsx               # Seção de abertura
-│   ├── AboutBlock.jsx         # Bloco de apresentação
-│   ├── ItemCards.jsx          # Grid de serviços/itens
-│   ├── Highlights.jsx         # Lista de destaques/marcos
-│   ├── Testimonials.jsx       # Depoimentos/prova social
-│   ├── ContentCard.jsx        # Card genérico de conteúdo
-│   ├── FAQAccordion.jsx       # Accordeon de perguntas
-│   ├── ContactForm.jsx        # Formulário de contato
-│   ├── CTABanner.jsx          # Chamada para ação
-│   ├── FloatingContactButton.jsx # Botão flutuante
-│   ├── Button.jsx             # Componente botão base
-│   └── Footer.jsx             # Rodapé
-│
+├── App.jsx
+├── main.jsx
+├── pages.jsx
+├── styles.css
+├── components/
+│   ├── AboutBlock.jsx
+│   ├── Button.jsx
+│   ├── ContactForm.jsx
+│   ├── ContentCard.jsx
+│   ├── CTABanner.jsx
+│   ├── FAQAccordion.jsx
+│   ├── FloatingContactButton.jsx
+│   ├── Footer.jsx
+│   ├── Header.jsx
+│   ├── Hero.jsx
+│   ├── Highlights.jsx
+│   ├── ItemCards.jsx
+│   └── Testimonials.jsx
 ├── data/
-│   └── siteContent.js         # Toda copy, textos e configurações
-│
+│   └── siteContent.js
 └── tokens/
-    └── tokens.css             # Design tokens (cores, fontes, espaçamento)
+    └── tokens.css
 ```
 
 ---
 
-## 🎨 Design Tokens
+## 🧩 Componentes principais
 
-Todos os tokens visuais estão centralizados em `src/tokens/tokens.css`:
-
-### Cores
-| Token | Uso | Valor |
-|---|---|---|
-| `--color-bg` | Fundo principal | `#f7f0e8` |
-| `--color-bg-alt` | Fundo alternado | `#ffffff` |
-| `--color-text-primary` | Texto principal | `#2b2620` |
-| `--color-text-secondary` | Texto de apoio | `#6b6459` |
-| `--color-accent` | CTA, destaque | `#8a7a5c` |
-| `--color-accent-hover` | Hover do accent | `#6f6149` |
-| `--color-border` | Divisores, cards | `#e4dacb` |
-
-### Tipografia
-| Token | Uso | Fonte |
-|---|---|---|
-| `--font-heading` | Títulos | Fraunces, Georgia |
-| `--font-body` | Corpo | DM Sans, Arial |
-| `--text-hero` | H1 | clamp(2.7rem, 5vw, 4rem) |
-| `--text-h2` | H2 | clamp(2rem, 3.5vw, 2.8rem) |
-| `--text-body` | Parágrafo | 1.0625rem |
-
-### Espaçamento
-- `--space-1` até `--space-7` (de 0.5rem a 6rem)
-- Container máx: 75rem (1200px)
-- Radius padrão: 1rem (cards), 999px (buttons)
+- `Hero` — seção inicial com título, descrição e botão principal
+- `AboutBlock` — apresenta o profissional ou a clínica
+- `ItemCards` — mostra serviços, especialidades ou tratamentos
+- `Highlights` — exibe diferenciais e resultados
+- `Testimonials` — depoimentos de pacientes ou clientes
+- `FAQAccordion` — perguntas frequentes para dúvidas comuns
+- `ContactForm` — formulário de contato
+- `CTABanner` — chamada final para ação
+- `FloatingContactButton` — botão fixo para contato rápido
 
 ---
 
-## 📝 Configurar Conteúdo
+## 📝 Personalize o conteúdo
 
-**Tudo que aparece no site é definido em `src/data/siteContent.js`.**
+Todo o texto, títulos, descrições e links estão em `src/data/siteContent.js`.
 
-Estrutura principal:
+### Exemplo de edição
 
-```javascript
+```js
 export const siteContent = {
-  identity: { name, monogram, description },
-  navigation: [...],
-  labels: { menu, close, contact, ... },
-  hero: { eyebrow, title, description, image, primaryAction, ... },
-  about: { eyebrow, title, description, image, highlights, ...},
-  items: [...],                    // Serviços/possibilidades
-  milestones: [...],               // Destaques/marcos
-  testimonials: [...],             // Depoimentos
-  content: [...],                  // Posts/artigos
-  faq: [...],                      // Perguntas frequentes
-  contact: { eyebrow, title, ... },
-  cta: {...},                      // Chamada para ação
-  pages: { home, about, items, content, faq, contact, post }, // Textos das páginas
-  legal: { title, body }           // Política de privacidade
+  identity: {
+    name: 'Dra. Ana Silva',
+    monogram: 'AS',
+    description: 'Clínica de saúde integrada para tratamentos humanizados',
+  },
+  hero: {
+    eyebrow: 'Saúde e bem-estar',
+    title: 'Cuidados personalizados para você',
+    description: 'Atendimento especializado em nutrição, fisioterapia e terapia ocupacional.',
+    primaryAction: { label: 'Agendar consulta', href: '#contact' },
+  },
+  items: [
+    { icon: '01', title: 'Consulta presencial', description: 'Avaliação completa e plano de tratamento.' },
+    { icon: '02', title: 'Acompanhamento online', description: 'Suporte contínuo com atendimento remoto.' },
+  ],
+  testimonials: [
+    { name: 'Carlos', role: 'Paciente', quote: 'Atendimento humanizado e resultados visíveis.' },
+  ],
 };
 ```
 
-### Exemplo: Alterar Cores
+---
 
-Em `src/tokens/tokens.css`:
+## 🎨 Personalização visual
+
+A configuração de cores, tipografia e espaçamento fica em `src/tokens/tokens.css`.
+
+### Alterar paleta de cores
 
 ```css
 :root {
-  --color-accent: #d4af37;  /* Mudou de #8a7a5c para dourado */
-  --color-accent-hover: #b8941c;
-  /* ... resto dos tokens */
+  --color-accent: #2b7a78;
+  --color-accent-hover: #20504f;
+  --color-bg: #f4f2ee;
 }
-```
-
-### Exemplo: Adicionar um Novo Item/Serviço
-
-Em `src/data/siteContent.js`:
-
-```javascript
-items: [
-  { icon: '01', title: 'Serviço A', description: 'Descrição breve' },
-  { icon: '02', title: 'Serviço B', description: 'Descrição breve' },
-  // Adicionar novo:
-  { icon: '03', title: 'Serviço C', description: 'Descrição breve' },
-]
 ```
 
 ---
 
-## 🏗️ Componentes
+## 💡 Ideal para
 
-### Button
-```jsx
-<Button 
-  action={{ label: 'Saiba mais', href: '/sobre' }} 
-  variant="primary" // 'primary' | 'secondary' | 'text'
-/>
-```
+- médicos, psicólogos, nutricionistas, fisioterapeutas
+- clínicas de estética e bem-estar
+- consultórios multidisciplinares
+- profissionais que precisam de uma apresentação clara e elegante
 
-### Hero
-```jsx
-<Hero 
-  eyebrow="Apresentação"
-  title="Clareza para dar o próximo passo"
-  description="Uma presença digital..."
-  image={{ src: 'url', alt: 'descrição' }}
-  primaryAction={{ label: 'Ação', href: '/' }}
-/>
-```
+---
 
-### ItemCards
-```jsx
-<ItemCards 
-  eyebrow="Possibilidades"
-  title="Seus itens"
-  items={content.items}
-  columns={3}
-/>
-```
+## 📌 Como adaptar
+
+- Atualize `siteContent.js` com o nome, especialidades e serviços
+- Troque imagens e ícones conforme a identidade visual do seu atendimento
+- Ajuste os textos das seções de depoimentos e FAQ para suas perguntas reais
+- Use o `FloatingContactButton` para facilitar contato via WhatsApp ou chat
+
+---
+
+## 🚧 Observações
+
+- O projeto não inclui backend para envio de formulário
+- É um template front-end que serve de base para landing pages de saúde
+- Para publicação, inclua suas próprias informações de contato e dados de privacidade
+
 
 ### FAQAccordion
 ```jsx
@@ -223,23 +190,6 @@ Todos os componentes são **100% configuráveis via props** — nenhum valor har
 
 ---
 
-## 🎯 Checklist de Reutilização (Para Novo Projeto)
-
-Ao usar este template em um novo projeto:
-
-- [ ] **Identidade**: Alterar `identity.name`, `monogram`, `description`
-- [ ] **Cores**: Editar tokens em `src/tokens/tokens.css`
-- [ ] **Fontes**: Trocar imports em `tokens.css` (manter estrutura)
-- [ ] **Navigation**: Adicionar/remover links em `navigation[]`
-- [ ] **Textos**: Editar todos os campos em `siteContent.js`
-- [ ] **Imagens**: Substituir URLs em `image.src` (use imagens próprias, não Unsplash)
-- [ ] **Serviços/Itens**: Configurar `items[]` conforme contexto
-- [ ] **Depoimentos**: Editar `testimonials[]` (ou remover se não necessário)
-- [ ] **Contato**: Definir `contact.channels[]` (email, tel, redes)
-- [ ] **Legal**: Reescrever `legal.body` conforme legislação local
-- [ ] **Testar**: Verificar responsividade, acessibilidade, velocidade
-
----
 
 ## 🔧 Tecnologia
 
@@ -268,55 +218,4 @@ Para manter acessibilidade:
 
 ---
 
-## 📚 Padrão de Commits
 
-Este projeto segue **Conventional Commits**:
-
-```
-feat(component): cria componente Hero com variantes esquerda/direita
-feat(page): monta página Home a partir dos componentes
-fix(component): corrige contraste do botão CTA para AA
-style(tokens): adiciona tokens de cor e tipografia
-docs: atualiza README com instruções de uso
-```
-
----
-
-## 🤝 Contribuindo
-
-Se estiver expandindo este template:
-
-1. Um commit = uma responsabilidade (componente OU página OU tokens)
-2. Nenhum conteúdo hardcoded — sempre usar props
-3. Nenhuma referência a nicho específico
-4. Testar em mobile, tablet e desktop
-5. Validar acessibilidade
-
----
-
-## 📝 Licença
-
-Este template é fornecido como base para projetos profissionais e institucionais.
-
----
-
-## ❓ Dúvidas Frequentes
-
-### P: Como adicionar uma nova página?
-R: Crie uma função em `src/pages.jsx` que retorna JSX usando os componentes. Adicione a rota em `App.jsx`.
-
-### P: Posso usar este template para múltiplos projetos?
-R: Sim! É totalmente reutilizável. Apenas atualize `siteContent.js` e `tokens.css` para cada projeto.
-
-### P: Como integrar com um CMS?
-R: Substitua `siteContent.js` com um fetch para sua API. A estrutura dos dados permanece a mesma.
-
-### P: Posso remover componentes?
-R: Sim! Import apenas o que precisa. Cada componente é independente.
-
-### P: Como customizar o layout?
-R: Edite `src/styles.css`. A grid e flex layout já estão otimizados, mas você pode adicionar mais CSS conforme necessário.
-
----
-
-**Construído com ❤️ para criar experiências digitais claras, acessíveis e consistentes.**

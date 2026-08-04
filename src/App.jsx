@@ -25,20 +25,15 @@ function route(pathname, content) {
 }
 
 export default function App() {
-  const [language, setLanguage] = useState('pt');
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(() => {
+    const saved = window.localStorage.getItem('profileTheme');
+    return (saved === 'dark' || saved === 'light') ? saved : 'light';
+  });
 
-  useEffect(() => {
-    const savedTheme = window.localStorage.getItem('profileTheme');
-    if (savedTheme === 'dark' || savedTheme === 'light') {
-      setTheme(savedTheme);
-    }
-
-    const savedLanguage = window.localStorage.getItem('profileLanguage');
-    if (savedLanguage === 'pt' || savedLanguage === 'en') {
-      setLanguage(savedLanguage);
-    }
-  }, []);
+  const [language, setLanguage] = useState(() => {
+    const saved = window.localStorage.getItem('profileLanguage');
+    return (saved === 'pt' || saved === 'en') ? saved : 'pt';
+  });
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;

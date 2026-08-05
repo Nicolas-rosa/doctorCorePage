@@ -9,7 +9,7 @@ function route(pathname, content) {
   const basePath = content.pathPrefix ? `/${content.pathPrefix}` : '';
   const makePath = (page) => (page ? `${basePath}/${page}` : basePath || '/');
   const contentBase = makePath(content.pathPages.content);
-
+//FUNÇAO PARA CHAMAR AS PAGINAS
   if (pathname.startsWith(`${contentBase}/`)) return <PostPage content={content} slug={pathname.split('/').pop()} />;
   const pages = {
     '/': HomePage,

@@ -1,6 +1,6 @@
 # 🏥 Template de Landing Page para Profissionais da Saúde
 
-## Atenção ele esta em desenvolvimento e possuirá um estilo customizavel
+## Atenção ele esta em desenvolvimento e ao final do projeto apresentara componentes customizáveis através de Design tokens centralizados
 
 Este projeto é um **template de landing page modular** pensado para profissionais da saúde, clínicas, consultórios e serviços de bem-estar. Ele reúne componentes prontos para apresentar serviços, depoimentos, diferenciais e canais de contato com visual moderno e foco em conversão.
 

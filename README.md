@@ -1,50 +1,135 @@
-# 🏥 Template de Landing Page para Profissionais da Saúde
+# 🏥 Healthcare Landing Page Template
 
-## Atenção ele esta em desenvolvimento e ao final do projeto apresentara componentes customizáveis através de Design tokens centralizados
+> Um template React moderno e totalmente modular para criação de **landing pages voltadas à área da saúde**, desenvolvido para clínicas, consultórios e profissionais da saúde que desejam uma presença digital profissional, responsiva e de fácil personalização.
 
-Este projeto é um **template de landing page modular** pensado para profissionais da saúde, clínicas, consultórios e serviços de bem-estar. Ele reúne componentes prontos para apresentar serviços, depoimentos, diferenciais e canais de contato com visual moderno e foco em conversão.
+Este projeto utiliza uma arquitetura baseada em componentes reutilizáveis e um sistema centralizado de conteúdo, permitindo adaptar toda a landing page sem modificar a estrutura da aplicação.
 
----
-
-## ✨ O que este template oferece
-
-- ✅ **Landing page pronta** para profissionais da saúde
-- ✅ **Componentes reutilizáveis** que podem ser combinados ou reorganizados
-- ✅ **Conteúdo editável** em `src/data/siteContent.js`
-- ✅ **Design tokens centralizados** em `src/tokens/tokens.css`
-- ✅ **Responsividade mobile-first** para celular, tablet e desktop
-- ✅ **Acessibilidade básica** com foco em texto alternativo e controle de foco
-- ✅ **Seções ideais para saúde**: serviços, sobre, depoimentos, FAQ, contato e CTA
+> **⚠️ Status do projeto:** Em desenvolvimento.
+>
+> Durante a evolução do projeto serão adicionados novos componentes, melhorias na arquitetura e um sistema completo de **Design Tokens**, tornando toda a interface ainda mais personalizável.
 
 ---
 
-## 🚀 Como usar
+# ✨ Funcionalidades
 
-### Pré-requisitos
-- Node.js 16+ instalado
-- npm (ou pnpm)
+## 🏗 Arquitetura
 
-### Instalação
+* Componentes reutilizáveis
+* Estrutura modular
+* Separação entre conteúdo e interface
+* Fácil manutenção
+* Código escalável
+
+## 🎨 Personalização
+
+* Conteúdo centralizado
+* Design Tokens
+* Componentes configuráveis via Props
+* Estrutura preparada para múltiplos idiomas
+* Rotas configuráveis
+
+## 📱 Experiência do Usuário
+
+* Mobile First
+* Layout responsivo
+* Navegação intuitiva
+* HTML semântico
+* Compatível com WCAG AA
+
+## ⚡ Desenvolvimento
+
+* React + Vite
+* CSS puro
+* Build otimizado
+* Fácil adaptação para diferentes especialidades
+
+---
+
+# 👨‍⚕️ Ideal para
+
+Este template pode ser utilizado por:
+
+* Médicos
+* Psicólogos
+* Nutricionistas
+* Dentistas
+* Fisioterapeutas
+* Fonoaudiólogos
+* Terapeutas ocupacionais
+* Clínicas multidisciplinares
+* Clínicas de estética
+* Centros de bem-estar
+* Profissionais da saúde em geral
+
+---
+
+# 📑 Índice
+
+* Funcionalidades
+* Tecnologias
+* Instalação
+* Estrutura
+* Fluxo da Aplicação
+* Personalização
+* Componentes
+* Design Tokens
+* Páginas
+* Acessibilidade
+* Roadmap
+* Licença
+
+---
+
+# 🚀 Instalação
+
+## Pré-requisitos
+
+* Node.js 18+
+* npm ou pnpm
+
+## Clonar o projeto
+
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
+
+cd seu-repositorio
+```
+
+## Instalar dependências
 
 ```bash
 npm install
 ```
 
-### Iniciar em modo de desenvolvimento
+## Executar em desenvolvimento
 
 ```bash
 npm run dev
 ```
 
-Abra `http://localhost:5173` no navegador.
+A aplicação estará disponível em:
 
-### Build para produção
+```
+http://localhost:5173
+```
+
+---
+
+## Build para Produção
 
 ```bash
 npm run build
 ```
 
-### Visualizar o build
+Os arquivos finais serão gerados em:
+
+```
+dist/
+```
+
+---
+
+## Preview
 
 ```bash
 npm run preview
@@ -52,14 +137,21 @@ npm run preview
 
 ---
 
-## 📁 Estrutura do projeto
+# 🛠 Tecnologias
 
-```
-src/
-├── App.jsx
-├── main.jsx
-├── pages.jsx
-├── styles.css
+* React
+* Vite
+* JavaScript
+* CSS3
+* Design Tokens
+
+---
+
+# 📁 Estrutura do Projeto
+
+```text
+src
+│
 ├── components/
 │   ├── AboutBlock.jsx
 │   ├── Button.jsx
@@ -74,150 +166,296 @@ src/
 │   ├── Highlights.jsx
 │   ├── ItemCards.jsx
 │   └── Testimonials.jsx
+│
 ├── data/
 │   └── siteContent.js
-└── tokens/
-    └── tokens.css
+│
+├── pages/
+│
+├── tokens/
+│   └── tokens.css
+│
+├── App.jsx
+├── main.jsx
+└── styles.css
 ```
 
 ---
 
-## 🧩 Componentes principais
+# 🔄 Fluxo da Aplicação
 
-- `Hero` — seção inicial com título, descrição e botão principal
-- `AboutBlock` — apresenta o profissional ou a clínica
-- `ItemCards` — mostra serviços, especialidades ou tratamentos
-- `Highlights` — exibe diferenciais e resultados
-- `Testimonials` — depoimentos de pacientes ou clientes
-- `FAQAccordion` — perguntas frequentes para dúvidas comuns
-- `ContactForm` — formulário de contato
-- `CTABanner` — chamada final para ação
-- `FloatingContactButton` — botão fixo para contato rápido
+Todo o conteúdo do template é controlado por um único arquivo.
+
+```text
+siteContent.js
+        │
+        ▼
+      App.jsx
+        │
+        ▼
+      Pages
+        │
+        ▼
+   Components
+        │
+        ▼
+ Landing Page
+```
+
+Isso permite alterar praticamente todo o site sem editar os componentes.
 
 ---
 
-## 📝 Personalize o conteúdo
+# 🎨 Personalização
 
-Todo o texto, títulos, descrições e links estão em `src/data/siteContent.js`.
+## Conteúdo
 
-### Exemplo de edição
+Todo o conteúdo da landing page fica em:
 
-```js
+```
+src/data/siteContent.js
+```
+
+É possível alterar:
+
+* Nome do profissional
+* Especialidades
+* Serviços
+* Imagens
+* Botões
+* Informações de contato
+* FAQ
+* Depoimentos
+* Redes sociais
+* Chamadas para ação
+* Textos da página
+
+---
+
+## Aparência
+
+Todos os estilos globais ficam em:
+
+```
+src/tokens/tokens.css
+```
+
+Você pode personalizar:
+
+* Paleta de cores
+* Tipografia
+* Espaçamentos
+* Bordas
+* Sombras
+* Larguras máximas
+* Raios dos componentes
+
+---
+
+## Exemplo de Conteúdo
+
+```javascript
 export const siteContent = {
-  identity: {
-    name: 'Dra. Ana Silva',
-    monogram: 'AS',
-    description: 'Clínica de saúde integrada para tratamentos humanizados',
-  },
-  hero: {
-    eyebrow: 'Saúde e bem-estar',
-    title: 'Cuidados personalizados para você',
-    description: 'Atendimento especializado em nutrição, fisioterapia e terapia ocupacional.',
-    primaryAction: { label: 'Agendar consulta', href: '#contact' },
-  },
-  items: [
-    { icon: '01', title: 'Consulta presencial', description: 'Avaliação completa e plano de tratamento.' },
-    { icon: '02', title: 'Acompanhamento online', description: 'Suporte contínuo com atendimento remoto.' },
-  ],
-  testimonials: [
-    { name: 'Carlos', role: 'Paciente', quote: 'Atendimento humanizado e resultados visíveis.' },
-  ],
+    identity: {
+        name: "Dra. Ana Silva",
+        monogram: "AS",
+        description: "Clínica especializada em saúde integrada."
+    },
+
+    hero: {
+        eyebrow: "Saúde e Bem-estar",
+        title: "Cuidando da sua saúde com atendimento humanizado",
+        description:
+            "Consultas personalizadas para oferecer o melhor tratamento para você.",
+
+        primaryAction: {
+            label: "Agendar Consulta",
+            href: "#contact"
+        }
+    }
 };
 ```
 
 ---
 
-## 🎨 Personalização visual
+# 🎨 Design Tokens
 
-A configuração de cores, tipografia e espaçamento fica em `src/tokens/tokens.css`.
+Todos os tokens ficam centralizados em:
 
-### Alterar paleta de cores
+```
+src/tokens/tokens.css
+```
+
+Exemplo:
 
 ```css
-:root {
-  --color-accent: #2b7a78;
-  --color-accent-hover: #20504f;
-  --color-bg: #f4f2ee;
+:root{
+
+    --color-bg:#F7F7F7;
+
+    --color-accent:#2B7A78;
+
+    --color-accent-hover:#20504F;
+
+    --font-heading:"Fraunces", serif;
+
+    --font-body:"DM Sans", sans-serif;
+
 }
 ```
 
----
-
-## 💡 Ideal para
-
-- médicos, psicólogos, nutricionistas, fisioterapeutas
-- clínicas de estética e bem-estar
-- consultórios multidisciplinares
-- profissionais que precisam de uma apresentação clara e elegante
+Alterando apenas esses valores toda a interface será atualizada automaticamente.
 
 ---
 
-## 📌 Como adaptar
+# 🧩 Componentes
 
-- Atualize `siteContent.js` com o nome, especialidades e serviços
-- Troque imagens e ícones conforme a identidade visual do seu atendimento
-- Ajuste os textos das seções de depoimentos e FAQ para suas perguntas reais
-- Use o `FloatingContactButton` para facilitar contato via WhatsApp ou chat
+O template possui componentes independentes e reutilizáveis.
 
----
+## Hero
 
-## 🚧 Observações
+Apresentação principal da landing page.
 
-- O projeto não inclui backend para envio de formulário
-- É um template front-end que serve de base para landing pages de saúde
-- Para publicação, inclua suas próprias informações de contato e dados de privacidade
-
-
-### FAQAccordion
-```jsx
-<FAQAccordion items={content.faq} />
-```
-
-Todos os componentes são **100% configuráveis via props** — nenhum valor hardcoded.
+* título
+* descrição
+* imagem
+* CTA principal
 
 ---
 
-## 📄 Páginas Implementadas
+## AboutBlock
 
-| Página | Rota | Descrição |
-|---|---|---|
-| Home | `/` | Apresentação completa, com Hero, Sobre, Itens, Destaques, Depoimentos, Conteúdo e CTA |
-| Sobre | `/sobre` | Apresentação expandida com trajetória e destaques |
-| Itens | `/itens` | Catálogo completo de serviços/possibilidades |
-| Conteúdo | `/conteudo` | Grid de posts/artigos com filtro por categoria |
-| Post | `/conteudo/[slug]` | Artigo individual com related content |
-| Contato | `/contato` | Formulário de contato com informações diretas |
-| FAQ | `/faq` | Perguntas frequentes dedicadas |
-| Privacidade | `/privacidade` | Política de privacidade |
+Apresentação do profissional ou clínica.
 
 ---
 
+## ItemCards
 
-## 🔧 Tecnologia
-
-- **React 18** — Framework UI
-- **Vite** — Build tool rápida e moderna
-- **CSS 3** — Estilos nativos (sem pré-processadores)
-- **Design Tokens** — Sistema de design centralizado
+Serviços, especialidades ou tratamentos.
 
 ---
 
-## ♿ Acessibilidade
+## Highlights
 
-O template foi construído com acessibilidade em mente:
-
-- ✅ Contraste WCAG AA mínimo em todos os textos
-- ✅ Foco visível em interativos (`outline-offset: 4px`)
-- ✅ Alt text obrigatório em imagens
-- ✅ Semântica HTML apropriada (header, nav, main, article, footer)
-- ✅ Navegação por teclado completa
-- ✅ Aria labels onde necessário
-
-Para manter acessibilidade:
-- Sempre forneça `alt` em imagens
-- Mantenha contraste min. 4.5:1 para texto pequeno
-- Não remova focus indicators
+Diferenciais da clínica.
 
 ---
 
+## Testimonials
 
+Depoimentos de pacientes.
+
+---
+
+## FAQAccordion
+
+Perguntas frequentes.
+
+---
+
+## ContactForm
+
+Formulário de contato.
+
+---
+
+## CTABanner
+
+Chamada final para conversão.
+
+---
+
+## FloatingContactButton
+
+Botão flutuante para WhatsApp, telefone ou outro canal de atendimento.
+
+Todos os componentes são totalmente configuráveis via Props.
+
+---
+
+# 📄 Estrutura da Landing Page
+
+A página principal foi organizada para apresentar todas as informações necessárias para uma landing page profissional.
+
+1. Hero
+2. Sobre
+3. Especialidades
+4. Diferenciais
+5. Depoimentos
+6. Conteúdo
+7. FAQ
+8. CTA
+9. Contato
+10. Rodapé
+
+---
+
+# ♿ Acessibilidade
+
+O projeto segue boas práticas de acessibilidade.
+
+Inclui:
+
+* Contraste WCAG AA
+* HTML semântico
+* Navegação por teclado
+* Focus visível
+* Alt obrigatório para imagens
+* Estrutura compatível com leitores de tela
+
+Para manter a acessibilidade:
+
+* utilize texto alternativo em imagens;
+* mantenha contraste mínimo de 4.5:1;
+* não remova indicadores de foco;
+* preserve a hierarquia correta de títulos.
+
+---
+
+# 🚧 Roadmap
+
+## Concluído
+
+* Estrutura inicial
+* Landing Page responsiva
+* Componentes reutilizáveis
+* Conteúdo centralizado
+* Responsividade
+* HTML semântico
+
+## Em desenvolvimento
+
+* Design Tokens completos
+* Mais componentes
+* Novas seções
+* Melhorias de acessibilidade
+* Sistema de temas
+* Internacionalização
+* Storybook
+* Testes automatizados
+* Componentes mais configuráveis
+
+---
+
+# 📌 Observações
+
+* Este projeto é exclusivamente **Front-end**.
+* O formulário de contato não possui integração com backend.
+* As imagens utilizadas devem ser substituídas pelas do projeto final.
+* Recomenda-se integrar o formulário a um serviço como Formspree, EmailJS ou backend próprio.
+
+---
+
+# 🤝 Contribuição
+
+Contribuições são bem-vindas.
+
+Caso encontre algum problema ou tenha sugestões de melhorias, abra uma **Issue** ou envie um **Pull Request**.
+
+---
+
+# 📄 Licença
+
+Este projeto está disponível sob a licença **MIT**.
+
+Você pode utilizá-lo, modificá-lo e adaptá-lo para projetos pessoais ou comerciais, respeitando os termos da licença.

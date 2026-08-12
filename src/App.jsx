@@ -9,8 +9,14 @@ function route(pathname, content) {
   const basePath = content.pathPrefix ? `/${content.pathPrefix}` : '';
   const makePath = (page) => (page ? `${basePath}/${page}` : basePath || '/');
   const contentBase = makePath(content.pathPages.content);
-//FUNÇAO PARA CHAMAR AS PAGINAS
-  if (pathname.startsWith(`${contentBase}/`)) return <PostPage content={content} slug={pathname.split('/').pop()} />;
+
+  // Se a URL corresponder a um post individual, renderiza a página do post
+  // utilizando o último segmento da URL como slug.
+  if (pathname.startsWith(`${contentBase}/`)) {
+    return <PostPage content={content} slug={pathname.split('/').pop()} />;
+  }
+
+  // Mapeia cada rota da aplicação para o componente responsável pela renderização.
   const pages = {
     '/': HomePage,
     [contentBase]: ContentPage,
@@ -20,7 +26,10 @@ function route(pathname, content) {
     [makePath(content.pathPages.faq)]: FAQPage,
     [makePath(content.pathPages.privacy)]: PrivacyPage,
   };
+
+  // Caso a rota não exista, exibe a página inicial como fallback.
   const Page = pages[pathname] || HomePage;
+
   return <Page content={content} />;
 }
 
@@ -28,6 +37,7 @@ export default function App() {
   const [language, setLanguage] = useState('pt');
   const [theme, setTheme] = useState('light');
 
+  // Ao iniciar a aplicação, recupera o tema salvo no navegador.
   useEffect(() => {
     const savedTheme = window.localStorage.getItem('profileTheme');
     if (savedTheme === 'dark' || savedTheme === 'light') {
@@ -35,6 +45,7 @@ export default function App() {
     }
   }, []);
 
+  // Sempre que o tema mudar, atualiza o atributo do HTML e salva a preferência.
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
     window.localStorage.setItem('profileTheme', theme);
@@ -44,7 +55,10 @@ export default function App() {
   const basePath = content.pathPrefix ? `/${content.pathPrefix}` : '';
   const makePath = (page) => (page ? `${basePath}/${page}` : basePath || '/');
 
+  // Alterna entre os temas claro e escuro.
   const toggleTheme = () => setTheme((current) => (current === 'dark' ? 'light' : 'dark'));
+
+  // Alterna o idioma entre português e inglês.
   const toggleLanguage = () => setLanguage((current) => (current === 'pt' ? 'en' : 'pt'));
 
   return (
@@ -59,7 +73,10 @@ export default function App() {
         onToggleTheme={toggleTheme}
         onToggleLanguage={toggleLanguage}
       />
+
+      {/* Renderiza dinamicamente a página correspondente à URL atual. */}
       <main>{route(window.location.pathname, content)}</main>
+
       <Footer
         identity={content.identity}
         navigation={content.navigation}
@@ -67,7 +84,12 @@ export default function App() {
         legalHref={makePath(content.pathPages.privacy)}
         copyright={content.labels.copyright}
       />
-      <FloatingContactButton action={{ label: content.labels.contact, href: makePath(content.pathPages.contact) }} label={content.labels.contact} />
+
+      {/* Botão flutuante de acesso rápido à página de contato. */}
+      <FloatingContactButton
+        action={{ label: content.labels.contact, href: makePath(content.pathPages.contact) }}
+        label={content.labels.contact}
+      />
     </>
   );
 }
